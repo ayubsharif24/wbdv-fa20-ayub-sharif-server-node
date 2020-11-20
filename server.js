@@ -16,4 +16,4 @@ const questionsController = require('./controllers/questions.controller.server')
 quizzesController(app);
 questionsController(app);
 
-app.listen(3000)
+app.listen(process.env.PORT)
