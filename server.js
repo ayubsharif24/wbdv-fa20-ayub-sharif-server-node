@@ -8,6 +8,14 @@ const mongoose = require('mongoose')
 mongoose.connect('mongodb+srv://dbUser:dbUserPassword@cluster0.c1s1o.mongodb.net/whiteboard?retryWrites=true&w=majority',
                  { useNewUrlParser: true, useUnifiedTopology: true})
 
+const quizzesSchema = mongoose.Schema({
+    title: String,
+}, {collection: 'quizzes'})
+
+const quizzesModel = mongoose.model('QuizzesModel', quizzesSchema)
+quizzesModel.find()
+    .then(allQuizzes => console.log(allQuizzes))
+
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
