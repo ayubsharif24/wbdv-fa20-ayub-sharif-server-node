@@ -5,11 +5,10 @@ const app = express()
 
 
 const mongoose = require('mongoose')
-mongoose.Promise = global.Promise
+
 
 mongoose.connect('mongodb+srv://dbUser:dbUserPassword@cluster0.c1s1o.mongodb.net/whiteboard?retryWrites=true&w=majority',
                  { useNewUrlParser: true, useUnifiedTopology: true})
-
 
 
 app.use(bodyParser.urlencoded({extended: false}))
