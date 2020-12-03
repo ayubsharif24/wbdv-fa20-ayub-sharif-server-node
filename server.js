@@ -8,7 +8,7 @@ const mongoose = require('mongoose')
 
 
 mongoose.connect('mongodb+srv://dbUser:dbUserPassword@cluster0.c1s1o.mongodb.net/whiteboard?retryWrites=true&w=majority',
-                 { useNewUrlParser: true, useUnifiedTopology: true})
+                 { useNewUrlParser: true})
 
 
 app.use(bodyParser.urlencoded({extended: false}))
@@ -33,5 +33,5 @@ quizzesController(app);
 questionsController(app);
 quizAttemptController(app);
 
-app.listen(process.env.PORT)
+app.listen(process.env.PORT || 3000)
 // app.listen(3000)
