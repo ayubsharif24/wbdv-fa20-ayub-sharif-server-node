@@ -6,6 +6,7 @@ module.exports =  function quizzesController (app) {
     app.get('/api/quizzes', (req, res) =>
         quizzesDao.findAllQuizzes()
             .then(allQuizzes => res.json(allQuizzes)))
+
     app.get('/api/quizzes/:qid', (req, res) =>
         quizzesDao.findQuizById(req.params['qid'])
             .then(quiz => res.json(quiz)))
